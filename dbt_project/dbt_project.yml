@@ -23,15 +23,13 @@ clean-targets:
 # we override the macro below in `macros/generate_schema_name.sql` so the
 # schema name is the layer name verbatim (`bronze`, `silver`, `gold`).
 models:
-  capstone:
-    staging:
-      +materialized: view
-      +schema: staging
-    # Uncomment once you add your first model under `models/silver/`.
-    # silver:
-    #   +materialized: view
-    #   +schema: silver
-    # Uncomment once you add your first model under `models/gold/`.
-    # gold:
-    #   +materialized: table
-    #   +schema: gold
+    capstone:
+      staging:
+        +materialized: view
+        +schema: staging
+      silver:
+        +materialized: view
+        +schema: silver
+      gold:
+        +materialized: table
+        +schema: gold
